@@ -30,8 +30,12 @@ To prevent the (costly) generation of the graph, you can simply load it that way
 ```
     
 ## Learning process
+### How the algorithm is playing
+When the algorithm is asked to choose a move, he randomly select an edge by considering the probabilties that each one has (aka their weight).
+
+
 ### Define edges' weight
-This is done in a similar way than neural network and is the whole point of this project.
+The learning process is done in a similar way than neural network and is the whole point of this project.
 
 Every edges in the graph is attributed to an arbitrary value at the initial phase (see more in #Experimentation).
 After each iteration (that is after each game played), these edges are slightly modified to improve the performance of the algorithm.
@@ -54,7 +58,7 @@ But you can save it that way to load it on later call.
 ./src/main.py --save-nodes-and-edges ./resources/weighted_nodes.dot
 ```
 
-
+    
 ### Load nodes and edges
 To prevent the (costly) learning of the weights, you can simply load it that way.
 
@@ -62,12 +66,14 @@ To prevent the (costly) learning of the weights, you can simply load it that way
 ./src/main.py --load-nodes-and-edges ./resources/weighted_nodes.dot
 ```
 
-
+    
 ## Play
+During the learning process, the algorithm plays against a bot playing at random.
+But now you can use the command line to play against it !
 
-
+Enter this command and follow the instructions:
 ``` sh
-./src/main.py -
+./src/main.py
 ```
 
 # Representation of boards
@@ -101,12 +107,15 @@ Moreover, the overcost is only made in the construction of the graph. So the cha
 
 
 # Experimentation
+[TODO]
 
 Initial nbr of matches
 Successful learning threshold
 
      
 # Dependencies
+[TODO]
 Numpy
 
 # TLDR; How to use it ?
+[TODO]
