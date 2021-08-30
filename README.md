@@ -5,6 +5,17 @@ The matchbox algorithm aims to solve the tic-tac-toe game with a Neural Networks
 
 
 # Algorithm
+## Construction of the graph
+### Generation
+### Load nodes
+
+## Define edges' weight
+### Learning process
+### Load nodes and edges
+
+## Play
+
+
 
 # Backup for futur usage 
 
@@ -41,3 +52,6 @@ Moreover, the overcost is only made in the construction of the graph. So the cha
 # Experimentation
 
 Innitial nbr of matches
+
+
+# TLDR; How to use it ?
