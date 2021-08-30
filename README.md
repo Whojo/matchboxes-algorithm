@@ -19,26 +19,56 @@ And we continue that way recursively until every possible (and accessible) board
 By default, the graph is generated at every call.
 But you can save it that way to load it on later call.
 ``` sh
-./src/main.py -s ./resources/unweighted_nodes.dot
+./src/main.py --save-nodes ./resources/unweighted_nodes.dot
 ```
 
 ### Load nodes
 To prevent the (costly) generation of the graph, you can simply load it that way.
 
 ``` sh
-./src/main.py -L ./resources/unweighted_nodes.dot
+./src/main.py --load-nodes ./resources/unweighted_nodes.dot
 ```
     
 ## Learning process
 ### Define edges' weight
+This is done in a similar way than neural network and is the whole point of this project.
+
+Every edges in the graph is attributed to an arbitrary value at the initial phase (see more in #Experimentation).
+After each iteration (that is after each game played), these edges are slightly modified to improve the performance of the algorithm.
+This method should converge pretty slowly but still converge.
+
+More precisely, when a game is being played, edges used are saved.
+- If the game is won, those edges' weight are increase by 2.
+- If the game is a draw, those edges' weight are increase by only 1.
+- If the game is lost, those edges' weight are decrease by 1.
+
+In this way, the probability a winning path is increased after each iteration and thus the performance of the algorithm,
+
+The measurement of performance is the sum of all the weights.
+This one should increase if it is learning.
+When over a certain number of iterations (see more in #Experimentation), this measurement has not decrease, we can say that the algorithm has successfuly learned (and mastered) the game.
+
+By default, the learning phase is executed at every call.
+But you can save it that way to load it on later call.
+``` sh
+./src/main.py --save-nodes-and-edges ./resources/weighted_nodes.dot
+```
+
+
 ### Load nodes and edges
+To prevent the (costly) learning of the weights, you can simply load it that way.
+
+``` sh
+./src/main.py --load-nodes-and-edges ./resources/weighted_nodes.dot
+```
+
 
 ## Play
+
 
 ``` sh
 ./src/main.py -
 ```
-
 
 # Representation of boards
 +---+---+---+
@@ -72,7 +102,11 @@ Moreover, the overcost is only made in the construction of the graph. So the cha
 
 # Experimentation
 
-Innitial nbr of matches
+Initial nbr of matches
+Successful learning threshold
 
+     
+# Dependencies
+Numpy
 
 # TLDR; How to use it ?
