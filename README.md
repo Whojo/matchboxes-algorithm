@@ -3,7 +3,7 @@ Inspired by Brillant's course on "Introduction to Neural Networks"
 
 The matchbox algorithm aims to solve the tic-tac-toe game with a Neural Networks approach.
 
-
+    
 # Algorithm
 ## Construction of the graph
 ### Generation
@@ -77,6 +77,7 @@ Enter this command and follow the instructions:
 ```
 
 # Representation of boards
+```
 +---+---+---+
 |   | x | o |
 +---+---+---+
@@ -84,11 +85,13 @@ Enter this command and follow the instructions:
 +---+---+---+
 |   |   |   |
 +---+---+---+
+```
 
 This board is represented this way:
 " xoxxo   "
 
 Each case is represented by one index and its label is then put in the index at this precise index
+```
 +---+---+---+
 | 1 | 2 | 3 |
 +---+---+---+
@@ -96,6 +99,7 @@ Each case is represented by one index and its label is then put in the index at 
 +---+---+---+
 | 7 | 8 | 9 |
 +---+---+---+
+```
 
 
 ## Improve:
